@@ -348,7 +348,7 @@ public class ChatsActivity extends AppCompatActivity {
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     HashMap<String, String > map = new HashMap<>();
-                    String key = "key=AAAAsNBwUrk:APA91bGld7tS3Z6HvMZc9-1C8hL73gNLNUZBpEezm_rAy1SxoS6LjNWdXczEzHti5lBI0KbbFAnKqR1D7F-s_rTp8N3V4d9WaWlN6zhDkXLJglMGIGlLi68irlz3OSxo2C6n-XqShzn7";
+                    String key = ".................Enter your Cloud Secrat Key Here...................";
                     map.put("Authorization",key);
                     map.put("Content-Type","application/json");
                     return map;
