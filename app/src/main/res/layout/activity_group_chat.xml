@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_chat"
+    tools:context=".Activities.GroupChatActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="6dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/send_btn"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/massagebox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#ffffff"
+                android:ems="10"
+                android:hint="Type a massage..."
+                android:inputType="textLongMessage|textAutoCorrect|textWebEditText|textMultiLine|number|textPersonName|textAutoComplete|textImeMultiLine|time"
+                android:padding="8dp"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/attachments"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="12dp"
+                app:srcCompat="@drawable/ic_attachment"
+                app:tint="#646363" />
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="12dp"
+                app:srcCompat="@drawable/ic_camera"
+                app:tint="#646363" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+    <ImageView
+        android:id="@+id/send_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle_green"
+        android:padding="10dp"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/sendbtn"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:tint="#ffff" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:visibility="gone"
+        android:theme="?attr/actionBarTheme"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/chat_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/chats_back_btn_curve"
+                android:layout_marginEnd="14dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="?attr/actionModeCloseDrawable"
+                    app:tint="@color/white" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/chat_profile_img"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/avatar"/>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/show_user_profile"
+                android:layout_width="200dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/User_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="User Name"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/online_notify_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/online_notify_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:text="Online"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:paddingBottom="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/chat_menu_options"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_baseline_more_vert_24"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/chat_call"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?selectableItemBackground"
+
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_call"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/chat_video_call"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="5dp"
+            android:background="?selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="27dp"
+                android:src="@drawable/ic_video"/>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</androidx.constraintlayout.widget.ConstraintLayout>

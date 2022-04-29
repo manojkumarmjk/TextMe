@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TextMe</string>
+    <string name="verify_your_phone_number">Verify your Phone Number</string>
+    <string name="enter_the_phone_number_for_authentication">Enter the Phone Number For Authentication</string>
+    <string name="enter_the_phone_number">Enter the Phone Number</string>
+    <string name="continue_button">Continue</string>
+    <string name="Country_code">+91</string>
+    <string name="enter_the_otp_code_to_verify_the_phone_number">Enter the OTP Code to Verify the Phone Number</string>
+    <string name="verify_911234567890">Verify +911234567890</string>
+    <string name="verify">Verify</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="status">Status</string>
+    <string name="chats">Chats</string>
+    <string name="calls">Calls</string>
+    <string name="groups">Groups</string>
+    <string name="invite">Invite</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="user_name">User Name</string>
+    <string name="phoneno_1234567890">+911234567890</string>
+    <string name="video_call">Video</string>
+    <string name="Audio_call">Audio</string>
+</resources>
